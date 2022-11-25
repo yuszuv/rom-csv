@@ -31,7 +31,7 @@ module ROM
       #
       # @api private
       def write_data
-        ::CSV.open(path, 'wb', file_options) do |csv|
+        ::CSV.open(path, 'wb', **file_options) do |csv|
           csv << headers
           data.each do |tuple|
             csv << ordered_data(tuple)
